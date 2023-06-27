@@ -1,0 +1,4 @@
+repository "Necropolis@NecropolisUVC@cloud"
+  path "/"
+    smartbranch "/main/Main"  
+     
