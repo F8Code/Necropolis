@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading;
+
 public class OnCollision : MonoBehaviour
 {
     [SerializeField] private Text healthText;
+    private float cooldown = 1f;
+    private float lastAttackTime = 0f;
     private int health = 100;
     private PlayerMovement playerMovement;
     private void Start() 
@@ -14,7 +18,9 @@ public class OnCollision : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision) 
     {
+        if (Time.time - lastAttackTime < cooldown) return;
         if (collision.gameObject.CompareTag("Damagable")) {
+            isCooldown = true;
             if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cHurt");
             else playerMovement.anim.SetTrigger("hurt");
             health -= 25;
@@ -24,7 +30,7 @@ public class OnCollision : MonoBehaviour
                 if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cDie");
                 else playerMovement.anim.SetTrigger("die");
             }
-
+            lastAttackTime = Time.time;
         }
     }
 
