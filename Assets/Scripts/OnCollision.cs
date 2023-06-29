@@ -20,7 +20,6 @@ public class OnCollision : MonoBehaviour
     {
         if (Time.time - lastAttackTime < cooldown) return;
         if (collision.gameObject.CompareTag("Damagable")) {
-            isCooldown = true;
             if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cHurt");
             else playerMovement.anim.SetTrigger("hurt");
             health -= 25;
