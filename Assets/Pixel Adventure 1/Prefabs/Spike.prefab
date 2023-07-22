@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1792080429745463060}
   - component: {fileID: 1792080429745463061}
   - component: {fileID: 1792080429745463058}
+  - component: {fileID: 1875947619980666755}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Damagable
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8242264, y: 0.37746853}
   m_EdgeRadius: 0
+--- !u!114 &1875947619980666755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1792080429745463059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5c7f3b3b6c898419c2abcc59d29f7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 20

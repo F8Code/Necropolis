@@ -10159,7 +10159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10465,7 +10465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2719610878272665094, guid: 3ac27749d0b637b4392f849fd79eb981, type: 3}
       propertyPath: m_Name
-      value: Slime
+      value: Slime2
       objectReference: {fileID: 0}
     - target: {fileID: 2719610878272665098, guid: 3ac27749d0b637b4392f849fd79eb981, type: 3}
       propertyPath: m_RootOrder
@@ -10622,7 +10622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10859,7 +10859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17752,7 +17752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18038,6 +18038,10 @@ PrefabInstance:
     - target: {fileID: 4105362945620786469, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_Name
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105362945620786469, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
+      propertyPath: m_TagString
+      value: Damagable
       objectReference: {fileID: 0}
     - target: {fileID: 4105362945620786471, guid: ebea5f8b8163f9a4ab9d9a1b45444e28, type: 3}
       propertyPath: m_RootOrder
@@ -18762,7 +18766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 205998685}
---- !u!114 &1538236442
+--- !u!114 &1538236443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -18771,10 +18775,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538236432}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5b03850446184468b85196d1436c53, type: 3}
+  m_Script: {fileID: 11500000, guid: 8770e1c31059e0e41b592677e6a5d836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthMax: 100
   healthText: {fileID: 902528921}
+  health: 0
+  damageSystem: {fileID: 0}
 --- !u!1 &1604677017
 GameObject:
   m_ObjectHideFlags: 0
@@ -18819,7 +18826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19100,7 +19107,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1792080429745463060, guid: 0032412944f16fa47aa1b7983636d235, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28830,6 +28837,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1464314081}
     m_Modifications:
+    - target: {fileID: 2705387533850179475, guid: 3ac27749d0b637b4392f849fd79eb981, type: 3}
+      propertyPath: healthSystem
+      value: 
+      objectReference: {fileID: 1538236443}
     - target: {fileID: 2719610878272665094, guid: 3ac27749d0b637b4392f849fd79eb981, type: 3}
       propertyPath: m_Name
       value: Slime
