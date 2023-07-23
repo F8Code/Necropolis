@@ -13,9 +13,11 @@ public class HealthSystem : MonoBehaviour
     private float lastAttackTime = 0f;
     public DamageSystem damageSystem;
     private PlayerMovement playerMovement;
+    public Animator animator;
     private void Start()
     {
         health = healthMax;
+        animator = GetComponent<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
     }
 
@@ -31,6 +33,7 @@ public class HealthSystem : MonoBehaviour
     }
     public void TakeDamage(int dmg)
     {
+        animator.SetTrigger("TakingDamage");
         health -= dmg;
         if (playerMovement != null)
         {
@@ -44,6 +47,7 @@ public class HealthSystem : MonoBehaviour
             }
         }
         if(dmg > 0) Debug.Log(this.name + " health: " + health);
+        if (health <= 0) animator.SetTrigger("Die");
     }
     public void Update()
     {

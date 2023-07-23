@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class OnTrigger : MonoBehaviour
 {
+    [SerializeField] private Text pointsText;
+    private Animator anim;
+    private int points = 0;
     void Start()
     {
         pointsText.text = "Points: " + points;
     }
 
-    private Animator anim;
-    private static int points = 0;
-    [SerializeField] private Text pointsText;
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.gameObject.CompareTag("Collectible")) {

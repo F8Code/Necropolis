@@ -18679,19 +18679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 205998685}
---- !u!114 &1538236442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538236432}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be5b03850446184468b85196d1436c53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 902528921}
 --- !u!114 &1538236443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18705,7 +18692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthMax: 100
+  healthText: {fileID: 0}
   health: 100
+  damageSystem: {fileID: 0}
 --- !u!1 &1587224733
 GameObject:
   m_ObjectHideFlags: 0

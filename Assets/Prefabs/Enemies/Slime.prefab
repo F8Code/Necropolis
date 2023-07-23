@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2719610877532004945}
   - component: {fileID: 2705387533850179475}
   - component: {fileID: 8032595494845589462}
+  - component: {fileID: 5273065859801160795}
   m_Layer: 7
   m_Name: Slime
   m_TagString: Damagable
@@ -147,7 +148,7 @@ Animator:
   m_GameObject: {fileID: 2719610877532004973}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 89aaebe355d346b40af738d224f2010f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 21cd1ca6be97d7b419430c92b009aec7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -203,6 +204,19 @@ MonoBehaviour:
   healthText: {fileID: 0}
   health: 0
   damageSystem: {fileID: 0}
+  animator: {fileID: 0}
+--- !u!114 &5273065859801160795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2719610877532004973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60cb50756e8811e4dafc4134105c2a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2719610878272665094
 GameObject:
   m_ObjectHideFlags: 0

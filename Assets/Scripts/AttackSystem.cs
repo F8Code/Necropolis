@@ -7,17 +7,17 @@ public class AttackSystem : MonoBehaviour
     private bool isAttacking = false;
     public Animator animator;
     public Transform attackPoint;
-    [SerializeField] public float attackRange;
+    [SerializeField] public Vector2 attackRange;
     public LayerMask enemyLayers;
     public HealthSystem healthSystem;
     [SerializeField] public int attackDamage;
     public AttackSystem attackSystem;
-    private float cooldown = 1f;
+    [SerializeField] private float cooldown;
     private float lastAttackTime = 0f;
 
     private void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -33,8 +33,8 @@ public class AttackSystem : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
-
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+            animator.SetTrigger("Attack");
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, attackRange, 0, enemyLayers);
             foreach(Collider2D Enemy in hitEnemies)
             {
                 Debug.Log("Enemy hit: " + Enemy.name);
@@ -49,6 +49,6 @@ public class AttackSystem : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireCube(attackPoint.position, attackRange);
     }
 }
