@@ -31,19 +31,23 @@ public class HealthSystem : MonoBehaviour
     }
     public void TakeDamage(int dmg)
     {
-        if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cHurt");
-        else playerMovement.anim.SetTrigger("hurt");
         health -= dmg;
-        if (health <= 0)
+        if (playerMovement != null)
         {
-            playerMovement.rb.bodyType = RigidbodyType2D.Static;
-            if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cDie");
-            else playerMovement.anim.SetTrigger("die");
+            if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cHurt");
+            else playerMovement.anim.SetTrigger("hurt");
+            if (health <= 0)
+            {
+                playerMovement.rb.bodyType = RigidbodyType2D.Static;
+                if (playerMovement.isCrouched) playerMovement.anim.SetTrigger("cDie");
+                else playerMovement.anim.SetTrigger("die");
+            }
         }
-        Debug.Log("Health: " + health);
+        if(dmg > 0) Debug.Log(this.name + " health: " + health);
     }
     public void Update()
     {
+        if (healthText == null) return;
         healthText.text = "Health: " + health;
     }
     private void RestartLevel()
