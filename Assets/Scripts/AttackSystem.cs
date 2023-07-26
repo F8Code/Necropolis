@@ -14,16 +14,22 @@ public class AttackSystem : MonoBehaviour
     public AttackSystem attackSystem;
     [SerializeField] private float cooldown;
     private float lastAttackTime = 0f;
+    private StaminaSystem staminaSystem;
+    [SerializeField] private float staminaRequirement;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        staminaSystem = GetComponent<StaminaSystem>();
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            Attack();
+            if (staminaSystem.currentStamina >= staminaRequirement)
+            {
+                Attack();
+            }
         }
     }
 
@@ -33,6 +39,7 @@ public class AttackSystem : MonoBehaviour
         if (!isAttacking)
         {
             isAttacking = true;
+            staminaSystem.currentStamina -= staminaRequirement;
             animator.SetTrigger("Attack");
             Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, attackRange, 0, enemyLayers);
             foreach(Collider2D Enemy in hitEnemies)

@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
     public bool isCrouched = false;
     private float dirX;
+    private StaminaSystem staminaSystem;
+    [SerializeField] private float jumpStaminaRequirement;
     private enum MovementState {idle, jump, run, cIdle, cRun}
 
     private void Start()
@@ -31,16 +33,18 @@ public class PlayerMovement : MonoBehaviour
         crouchingCollSizeY = coll.size.y/2;
         crouchingCollOffsetY = coll.offset.y/2;
         sprite = GetComponent<SpriteRenderer>();
+        staminaSystem = GetComponent<StaminaSystem>();
     }
 
     private void Update()
     {
         dirX = Input.GetAxis("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && isGrounded()) {
+        if (Input.GetButtonDown("Jump") && isGrounded() && staminaSystem.currentStamina > jumpStaminaRequirement) {
             if (!hasNoRoom()) {
                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
                 ColliderStanding();
+                staminaSystem.currentStamina -= jumpStaminaRequirement;
             }     
         }
         else if (Input.GetKey("s") && isGrounded()) {  
