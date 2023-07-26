@@ -26,6 +26,5 @@ public class StaminaSystem : MonoBehaviour
             }
         }
         slider.value = currentStamina;
-        Debug.Log("Stamina: " + currentStamina);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private int healthMax;
+    [SerializeField] public int healthMax;
     [SerializeField] private Text healthText;
     public int health;
     private float cooldown = 1f;
